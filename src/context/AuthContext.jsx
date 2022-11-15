@@ -4,7 +4,7 @@ import {toastNotify} from '../helper/Toastify'
 
 export const AuthContext = createContext();
 
-const url = `http://13164.stock.fullstack.clarusway.com/`
+const url = `http://13164.fullstack.clarusway.com/`
 
 const AuthContextProvider = (props) => {
     const [currentUser, setCurrentUser] = useState(sessionStorage.getItem('username') || false);
@@ -97,3 +97,4 @@ const AuthContextProvider = (props) => {
   }
   
   export default AuthContextProvider;
+  
