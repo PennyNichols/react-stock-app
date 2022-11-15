@@ -2,8 +2,8 @@ import React from 'react';
 import MuiDrawer from '@mui/material/Drawer';
 import { styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
-import SideMenu from './SideMenu';
 import { useSelector } from 'react-redux';
+import SideBarItems from './SideBarItems';
 
 const drawerWidth = 240;
 
@@ -41,7 +41,7 @@ const Sidebar = () => {
   return (
     <Drawer variant="permanent"open={open}>
       <Toolbar/>
-      <SideMenu/>
+      <SideBarItems/>
     </Drawer>
   )
 }

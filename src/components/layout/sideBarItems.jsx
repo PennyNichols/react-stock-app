@@ -16,7 +16,7 @@ const menu = [
   { title: 'Categories', icon: <StarsIcon/>, path:'/stock/categories'}, 
 ]
 
-const SideMenu = () => {
+const SideBarItems = () => {
   const admin = sessionStorage.getItem("admin") === 'true';
   const navigate = useNavigate();
   return (
@@ -44,4 +44,4 @@ const SideMenu = () => {
   )
 }
 
-export default SideMenu
+export default SideBarItems

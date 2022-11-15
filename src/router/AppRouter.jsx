@@ -1,8 +1,14 @@
 import React from 'react'
-import { Brands, Categories, Dashboard, Firms, Login, Products, Register, Transactions }
-  from '../pages';
+
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from '../components/layout/Layout';
+import { Login, Register } from '../pages';
+import Brands from '../pages/Brands';
+import Categories from '../pages/Categories';
+import Dashboard from '../pages/Dashboard';
+import Firms from '../pages/Firms';
+import Products from '../pages/Products';
+import Transactions from '../pages/Transactions';
 import PrivateRouter from './PrivateRouter';
 
 const AppRouter = () => {
