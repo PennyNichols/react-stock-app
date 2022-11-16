@@ -13,6 +13,7 @@ export const getData = (type) => {
         const res = await axios(`${url}stock/${type}/`, {
           headers: {Authorization: `Token ${token}`}
         })
+        console.log(res);
   
         if (res.status === 200) { 
           switch (type) { 
@@ -29,6 +30,29 @@ export const getData = (type) => {
       }
     }
   
+  }
+  
+  export const getAllTransactions = () => { 
+    return async(dispatch) => {
+      const token = atob(sessionStorage.getItem("token"));
+      try {
+          const res = await axios.get(`${url}stock/purchases/`, {
+                      headers: { Authorization: `Token ${token}` },
+          });
+       const resSale = await axios.get(`${url}stock/sales/`, {
+                  headers: { Authorization: `Token ${token}` },
+              });
+   
+      
+        if (res.data && resSale.data) { 
+          dispatch(stockActions.getAllTransactions({sales: resSale.data, purchases: res.data}))
+        }
+      } catch (err) { 
+        console.log(err)
+      }
+  
+  
+    }
   }
   
   
